@@ -28,8 +28,8 @@ html , body{
 /*---------------------- Main Header ------------------- */
 
 .main-header{
-    padding: 80px 0;
-    min-height: 100vh;
+    padding-top: 80px;
+    min-height: 90vh;
     background-size:cover;
     background-position: center;
     background-repeat:no-repeat;
@@ -51,12 +51,10 @@ html , body{
     left:50%;
     transform: translateX(-50%);
     z-index:99;
-    background: var(--card-background) !important;
+    background:#fff;
     box-shadow: var(--box-shadow);
-    backdrop-filter: var(--blur);
     border: var(-card-border);
 }
-
 .logo{
     justify-self: flex-start;
 }
@@ -99,13 +97,18 @@ html , body{
     width:100%;
 }
 
-.nav .fa-bars{
+.nav>i{
+    font-size: 24px;
+    flex-basis: 10%;
     display:none;
+}
+.nav .fa-user{
+    display: block;
 }
 
 .Store-button {
-    height:40px;
-    width:140px;
+    height:50px;
+    width:150px;
     background-color: var(--primery-color);
     transition: .5s;
     border:none;
@@ -122,6 +125,11 @@ html , body{
 }
 
 /*---------------------- Header ------------------- */
+.slider{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
 .slider-imgs {
     display:flex;
     flex-basis: 100%;
@@ -136,32 +144,32 @@ html , body{
     transition: .5s;
 }
 .slider-nav{
+    align-self:center;
+    padding: 0 18px;
+    bottom: 30px;
+    position:relative;
+    height: 15px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 16px;
     display:flex;
     justify-content:center;
-    padding: 22px 0;
     align-items:center;
     gap: 22px;
 }
 .slider-nav button{
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
     border: none;
-    background:#fff;
+    background: rgba(0,0,0,0.5);
     border-radius: 50%;
     transition: .5s ease;
     box-shadow: 0 0 6px rgba(0,0,0,0.2);
 }
-.slider-nav i{
-    margin: 0 40px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size: 25px;
-}
+
 .slider-nav .selected{
-    width:16px;
-    height:16px;
-    background: var(--primery-color);
+    width: 12px;
+    border-radius: 6px;
+    background: #fff;
     box-shadow: 1px 1px 6px 1px rgba(0,0,0,0.2);
 }
 
@@ -170,7 +178,6 @@ html , body{
     display:flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .header .content{
@@ -202,12 +209,14 @@ html , body{
 }
 .buttons {
     display:flex;
-    gap: 10vw;
+    margin-top: 30px ;
+    width: 100%;
+    justify-content:space-around;
     
 }
 button{
-    height:40px;
-    width:140px;
+    height:50px;
+    width:150px;
     transition: .5s;
     border: 2px solid var(--primery-color);
     background: #fff;
@@ -224,7 +233,7 @@ button:hover{
     border:none;
 }
 
-/*---------------------- Features Section ------------------- */
+/*---------------------- Updates Section ------------------- */
 .wrapper{
     display:flex;
     align-items: center;
@@ -298,88 +307,67 @@ button:hover{
 }
 
 /*---------------------- Catagories Section ------------------- */
-.catagories{
+.events{
     width: 100%;
-    padding: 80px 0;
+    padding: 40px 0;
 }
-
-.catagories-cards{
-    max-width: 92%;
-    margin:auto;
-    display:flex;
-    gap: 100px;
-    overflow-x: auto;
-}
-
-.catagories .section-title {
-    font-size: 80px;
+.events .section-title h4{
+    font-size: 10vw;
     color: var(--primery-color);
     text-transform:uppercase;
-    -webkit-text-stroke-color: var(--primery-color);
-    -webkit-text-stroke-width: 0.5px;
-    color: transparent;
     text-align:center;
 }
-
-.catagories-card{
+.event-cards{
+    height:350px;
+    width: 100%;
     display:flex;
-    gap: 10px;
-    align-items:flex-start;
-    padding: 50px 0;
-    min-width: 420px;
+    padding: 0 1.5%;
+    gap: 40px;
+    justify-content: space-between;
+    align-items:center;
+    overflow: auto;
 }
 
-.catagories-card img{
-    max-width:250px;
-}
-
-.catagories-card .content{
+.event-card{
     display:flex;
     flex-direction:column;
-    gap: 10px;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    max-width: 400px;
+    display: none;
+    border: 0.2px solid rgba(0,0,0,0.2);
+    box-shadow: 1px 3px 10px 1px rgba(0,0,0,0.05);
+    border-radius: 10px;
 }
 
-.catagories-card .content h4{
-    color: var(--primery-color);
+.event-card img{
+    width: 100%;
+    border-radius: 10px 10px 0 0;
 }
-.catagories-card .content h2{
-    font-size: 50px;
-    width: 50px;
-    color: var(--primery-color);
-    line-height: 3rem;
-    margin-top: 15px;
+
+.event-card .content{
+    display:flex;
     flex-direction:column;
-
+    gap: 5px;
+    padding-left: 8px;
+}
+.event-cards i{
+    font-size: 36px;
+    height: 100%;
+    display:flex;
+    align-items:center;
 }
 
-.catagories-card .content h2 span {
-    color: var(--primery-color);
-    text-transform:uppercase;
-    -webkit-text-stroke-color: var(--primery-color);
-    -webkit-text-stroke-width: 1px;
-    color: transparent;
-
+.event-cards::-webkit-scrollbar{
+    width: 0;
 }
 
-.catagories-cards::-webkit-scrollbar{
-    border: 0.2px solid rgba(0,0,0,0.5);
-    height: 8px;
-    border-radius: 10px; 
-}
-.catagories-cards::-webkit-scrollbar-track{
-    background-color:#1e1e1e;
-}
-.catagories-cards::-webkit-scrollbar-thumb{
-    background-color: var(--primery-color);
-    border: 2px solid #1e1e1e;
-    border-radius: 10px; 
-
-}
 @media only screen and (orientation: portrait){
     .nav{
         padding: 8%;
     }
-    .nav .fa-bars{
+    .nav i{
         display: block;
     }
     .nav ul{
@@ -387,9 +375,10 @@ button:hover{
         top: 110%;
         left:0;
         padding-left: 10%;
-        background-color:#fff;
+        background-color: rgba(255,255,255,0.6);
         border-radius: var(--border-radius);
         box-shadow: var(--box-shadow);
+        backdrop-filter: blur(10px);
         width:100%;
         transition: 1s;
         display:none;

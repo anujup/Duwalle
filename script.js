@@ -1,9 +1,16 @@
 // ------------------------ Show Menu -------------------------
 let bars = document.querySelector(".nav .fa-bars")
 let menu = document.querySelector('.nav ul')
-
+let showing = false
 bars.addEventListener("click", function(){
     menu.classList.toggle('showmenu')
+    if (showing){
+        bars.className = bars.className.replace("fa-close", "fa-bars")
+        showing = false
+    }else{
+        bars.className = bars.className.replace("fa-bars", "fa-close")
+        showing = true
+    }
     
 })
 function autoSlide(params) {
@@ -11,9 +18,7 @@ function autoSlide(params) {
 }
 // ------------------------ slider -------------------------
 let dot = document.getElementsByClassName("dot")
-let prevSlider = document.querySelector('.fa-angle-left')
 let image = document.getElementsByClassName("slide")
-let nextSlider = document.querySelector('.fa-angle-right')
 let value = ""
 let selectIndex = 0
 dot[selectIndex].className += " selected"
@@ -42,7 +47,7 @@ for (let index = 0; index < dot.length; index++) {
 // ------------------------ show slider -------------------------
 function showSlide(selectedIndex) {
     value = selectedIndex*100
-    value = value + "vw";
+    value = value + "%";
     for (let index = 0; index < image.length; index++) {
         image[index].style.right = value
     }
@@ -52,26 +57,26 @@ function showSlide(selectedIndex) {
     dot[selectedIndex].className += " selected"
     
 }
-// ------------------------ slider next -------------------------
+
+
+
+// ------------------------ Event -------------------------
+let eventCard = document.getElementsByClassName("event-card")
+let next = document.document.querySelector('.fa-angle-right')
+let selectedEvent = 3
+// ------------------------ Slider -------------------------
+function showEvent(i){
+    for (let index = 0; index < eventCard.length; index++) {
+        eventCard[index].style.display = "none"
+    }
+    eventCard[i].style.display = "flex"
+    selectedEvent = i
+}
+
+showEvent(selectedEvent)
+// ------------------------ next Event -------------------------
 nextSlider.addEventListener("click", function(){
-    if (selectIndex < image.length-1) {
-        selectIndex++
-    } else{
-        selectIndex = 0
-    }
-    showSlide(selectIndex)
-       
+    alert("hi")
 })
-// ------------------------ slider prev -------------------------
-prevSlider.addEventListener("click", function(){
-    if (selectIndex > 0 ) {
-        selectIndex--
-    } else{
-        selectIndex = 3
-    }
-    showSlide(selectIndex)
-})
-
-
-    
+   
 
