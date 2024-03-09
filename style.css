@@ -66,7 +66,9 @@ html , body{
 .logo h1 span{
     color: var(--primery-color);
 }
-
+.nav ul{
+    transform: all .4s;
+}
 
 .nav ul li{
     display: inline-block;
@@ -214,7 +216,7 @@ html , body{
     justify-content:space-around;
     
 }
-button{
+.buttons button:first-child{
     height:50px;
     width:150px;
     transition: .5s;
@@ -227,7 +229,7 @@ button{
     cursor: pointer;
 
 }
-button:hover{
+.buttons button:hover{
     background: #1e1e1e;
     color: white;
     border:none;
@@ -241,14 +243,14 @@ button:hover{
 }
 
 .updates{
-    width:100%;
+    width: 1400px;
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
 }
 .updates h4{
-    font-size: 10vw;
+    font-size: 80px;
     color: var(--primery-color);
     text-transform:uppercase;
     text-align:center;
@@ -303,65 +305,93 @@ button:hover{
 .updates button:hover{
     background: var(--primery-color);
     color: aliceblue;
-    border-bottom:none;
+    border:none;
 }
-
-/*---------------------- Catagories Section ------------------- */
-.events{
-    width: 100%;
-    padding: 40px 0;
+/*---------------------- Event Section ------------------- */
+.event-section-title{
+    margin-top: 100px;
+    padding: 8px 4%;
+    width: 100vw;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
-.events .section-title h4{
-    font-size: 10vw;
+.event-section-title h4{
+    font-size: 80px;
     color: var(--primery-color);
     text-transform:uppercase;
     text-align:center;
-}
-.event-cards{
-    height:350px;
-    width: 100%;
-    display:flex;
-    padding: 0 1.5%;
-    gap: 40px;
-    justify-content: space-between;
-    align-items:center;
-    overflow: auto;
-}
 
-.event-card{
+}
+.swiper button{
+    padding: 0 20px;
+    color:#000;
+    background: transparent;
+    margin:auto;
+    height: 50px;
     display:flex;
+    align-items:center;
+    justify-content:center;
+    border: none;
+    font-size: 20px;
+    gap: 8px;
+    transition: .3s;
+    font-weight: 600;
+    border-bottom: 2px solid #000;
+}
+.swiper button:hover{
+    border-bottom-color: var(--primery-color);
+    color: var(--primery-color);
+}
+.swiper{
+    max-width: 1400px;
+    display: flex;
     flex-direction:column;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 15px;
-    max-width: 400px;
-    display: none;
-    border: 0.2px solid rgba(0,0,0,0.2);
-    box-shadow: 1px 3px 10px 1px rgba(0,0,0,0.05);
+    align-items: space-between;
+
+}
+.swiper .swiper-wrapper{
+    margin: 30px 0;
+    height: 300px;
+    display: flex;
+    align-items: center;
+}
+.swiper .swiper-slide{
+    height: 80%;
     border-radius: 10px;
-}
-
-.event-card img{
-    width: 100%;
-    border-radius: 10px 10px 0 0;
-}
-
-.event-card .content{
-    display:flex;
+    background: #fff;
+    max-width: 400px;
+    display: flex;
     flex-direction:column;
-    gap: 5px;
-    padding-left: 8px;
-}
-.event-cards i{
-    font-size: 36px;
-    height: 100%;
-    display:flex;
-    align-items:center;
+    justify-content: space-between;
+    font-size: 24px;
+    border: 0.2px solid rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.1), -2px -2px 12px rgba(0,0,0,0.1);
+    box-shadow: var(--box-shadow);
 }
 
-.event-cards::-webkit-scrollbar{
-    width: 0;
+.swiper-slide img{
+    width: 100%;
+    height: 65%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0 ;
 }
+.contents {
+    display:flex;
+    justify-self:space-around;
+    padding: 10px 16px;
+    flex-direction:column;
+    align-items: space-around;
+}
+.contents h4{
+    font-size: 22px;
+    font-weight: 600;
+}
+.contents p{
+    font-size:14px;
+}
+
+
 
 @media only screen and (orientation: portrait){
     .nav{
@@ -380,7 +410,6 @@ button:hover{
         box-shadow: var(--box-shadow);
         backdrop-filter: blur(10px);
         width:100%;
-        transition: 1s;
         display:none;
     } 
     .nav ul li{
@@ -415,12 +444,16 @@ button:hover{
     .nav-btn{
         display:block;
     }
-    .catagories .section-title{font-size: 12vw;}
-    .catagories-card img{max-width: 200px;}
-    .catagories .content h2{
-        font-size: 32px;
-        line-height: 2.2rem;
+    .updates h4{
+        font-size: 40px;
     }
+    .event-section-title h4{
+        font-size: 40px;
+    }
+    .swiper .swiper-slide{
+        max-width:270px;
+    }
+
 }
 
 

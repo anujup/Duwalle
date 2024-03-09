@@ -13,9 +13,6 @@ bars.addEventListener("click", function(){
     }
     
 })
-function autoSlide(params) {
-    
-}
 // ------------------------ slider -------------------------
 let dot = document.getElementsByClassName("dot")
 let image = document.getElementsByClassName("slide")
@@ -59,24 +56,43 @@ function showSlide(selectedIndex) {
 }
 
 
+// ------------------------ Event slider -------------------------
+const swiper = new Swiper('.swiper', {
+    effect: "coverflow",
+    slidesPerView: "auto",
+    centeredSlides: true,
+    speed: 600,
+    coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 3,
+        slideShadows: false,
+    },
+    breakpoints: {
+         320: {
+             spaceBetween: 80
+         },
+         640: {
+           spaceBetween: 200
+          }
+    },
 
-// ------------------------ Event -------------------------
-let eventCard = document.getElementsByClassName("event-card")
-let next = document.document.querySelector('.fa-angle-right')
-let selectedEvent = 3
-// ------------------------ Slider -------------------------
-function showEvent(i){
-    for (let index = 0; index < eventCard.length; index++) {
-        eventCard[index].style.display = "none"
-    }
-    eventCard[i].style.display = "flex"
-    selectedEvent = i
-}
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    dynamicBullets: true,
+  },
 
-showEvent(selectedEvent)
-// ------------------------ next Event -------------------------
-nextSlider.addEventListener("click", function(){
-    alert("hi")
-})
-   
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+
+});
