@@ -1,9 +1,11 @@
 // ------------------------ Show Menu -------------------------
 let bars = document.querySelector(".nav .fa-bars")
+let nav = document.querySelector('.nav')
 let menu = document.querySelector('.nav ul')
 let showing = false
 bars.addEventListener("click", function(){
     menu.classList.toggle('showmenu')
+    nav.classList.toggle('noblur')
     if (showing){
         bars.className = bars.className.replace("fa-close", "fa-bars")
         showing = false

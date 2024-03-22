@@ -51,9 +51,10 @@ html , body{
     left:50%;
     transform: translateX(-50%);
     z-index:99;
-    background:#fff;
     box-shadow: var(--box-shadow);
     border: var(-card-border);
+    backdrop-filter: saturate(80%) blur(10px);
+    background: var(--card-background);
 }
 .logo{
     justify-self: flex-start;
@@ -67,7 +68,7 @@ html , body{
     color: var(--primery-color);
 }
 .nav ul{
-    transform: all .4s;
+    transition:all .4s !important;
 }
 
 .nav ul li{
@@ -107,6 +108,7 @@ html , body{
 .nav .fa-user{
     display: block;
 }
+
 
 .Store-button {
     height:50px;
@@ -178,15 +180,18 @@ html , body{
 /*---------------------- Header ------------------- */
 .header{
     display:flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: space-around;
+    gap: 30px;
 }
 
 .header .content{
-    padding: 0 3rem;
+    width: 60%; 
+    padding: 2rem 3rem;
     display:flex;
     flex-direction:column;
-    align-items: center;
+    align-items: flex-start;
     gap: 30px;
     z-index: 1;
     overflow: visible;
@@ -197,9 +202,7 @@ html , body{
 }
 
 .header .content h1{
-    text-align:center;
     font-size: 50px;
-    width: 100%; 
     line-height: 80px;
     text-transform: capitalize;
 }
@@ -211,9 +214,9 @@ html , body{
 }
 .buttons {
     display:flex;
-    margin-top: 30px ;
     width: 100%;
-    justify-content:space-around;
+    justify-content:center;
+    gap: 30px;
     
 }
 .buttons button:first-child{
@@ -237,6 +240,7 @@ html , body{
 
 /*---------------------- Updates Section ------------------- */
 .wrapper{
+    margin-top: 80px;
     display:flex;
     align-items: center;
     justify-content:center;
@@ -308,7 +312,7 @@ html , body{
     border:none;
 }
 /*---------------------- Event Section ------------------- */
-.event-section-title{
+.section-title{
     margin-top: 100px;
     padding: 8px 4%;
     width: 100vw;
@@ -316,7 +320,7 @@ html , body{
     justify-content:center;
     align-items:center;
 }
-.event-section-title h4{
+.section-title h4{
     font-size: 80px;
     color: var(--primery-color);
     text-transform:uppercase;
@@ -348,7 +352,7 @@ html , body{
     display: flex;
     flex-direction:column;
     align-items: space-between;
-
+    box-shadow: inset 0px 0px 10px 2px rgba(0,0,0,0.2);
 }
 .swiper .swiper-wrapper{
     margin: 30px 0;
@@ -365,11 +369,15 @@ html , body{
     flex-direction:column;
     justify-content: space-between;
     font-size: 24px;
-    border: 0.2px solid rgba(0,0,0,0.2);
+    border: 0.8px solid rgba(0,0,0,0.2);
     box-shadow: 2px 2px 12px rgba(0,0,0,0.1), -2px -2px 12px rgba(0,0,0,0.1);
     box-shadow: var(--box-shadow);
+    transition:all .3s;
 }
-
+.swiper .swiper-slide:hover{
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.1), -3px -3px 8px rgba(0,0,0,0.1);
+    border-color: var(--primery-color);
+}
 .swiper-slide img{
     width: 100%;
     height: 65%;
@@ -392,10 +400,177 @@ html , body{
 }
 
 
+/* ------------------------ Store Section ----------------------- */
+.store{
+    background:#f6f6f6;
+    width: 100%;
+    display:flex;
+    flex-direction:column;
+    align-items: space-around;
+}
+.store-element-heading{
+    display:flex;
+    padding: 8px 2%;
+    justify-content:space-between;
+    margin: 18px 0;
+}
+.store-element-heading h4{
+    font-size: 22px;
+    font-weight: 500;
+}
+.store-element-heading a{
+    color:#000;
+    padding: 0 8px;
+    display:flex;
+    align-items:center;
+    padding: 6px 10px;
+    border-radius: 10px;
+    justify-content:center;
+    border: 2px solid #000;
+    gap: 8px;
+    font-weight: 500;
+    transition:all .4s;
+}
+.store-element-heading a:hover{
+    background:#000;
+    color:#fff;
+}
+.courses ,.notes {
+    align-items:center;
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    overflow: auto;
+}
 
+.store-item{
+    width: 165px;
+    margin: 20px 0;
+    height: 250px;
+    background:#fff;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 8px;
+    display:flex;
+    flex-direction:column;
+}
+.store-item img{
+    height: 60%;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+    width: 100%;
+}
+.store-item h4{
+    font-size: 16px;
+    font-weight: 600;
+    display:flex;
+    margin-left: 12px;
+    align-items: center;
+    gap: 8px;
+}
+.store-item p{
+    font-size: 13px;
+    font-weight: 500;
+    margin-left:12px;
+    color:#000;
+}
+.fotter {
+    background: rgba(0,0,0,0.9);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-around;
+    padding: 20px 0;
+    margin-top: 200px;
+    background: var(--primery-color);
+}
+
+.comment {
+    padding: 12px 8px;
+    border-radius:22px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    position:relative;
+    top: -53px;
+    box-shadow: -2px -2px 22px rgba(0,0,0,0.1), 2px 2px 22px rgba(0,0,0,0.1);
+}
+.comment input{
+    border: none;
+    border-radius: 12px;
+    width: 40vw;
+    height: 40px;
+    box-shadow: inset 2px 2px 6px rgba(0,0,0,0.18);
+    padding: 12px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    position:relative;
+    left: 5%;
+}
+
+.comment p {
+    font-size: 12px;
+    word-wrap: wrap;
+    width: 80px;
+    text-align: center;
+    font-style:italic;
+    font-weight: 500;
+    margin-left: 10px;
+    
+}
+.comment button {
+    border: none;
+    background-color: var(--primery-color);
+    width: 80px;
+    font-weight: 600;
+    color:#fff;
+    height:46px;
+    border-radius: 22px;
+    transition: all 0.4s;
+    z-index: 2;
+
+}
+.comment button:hover{
+    border: 2px solid var(--primery-color);
+    background:#fff;
+    color: var(--primery-color);
+}
+.social-links{
+    padding: 14px 22px;
+    border-bottom: 2px solid #fff;
+    display:flex;
+    gap: 26px;
+    margin: 8px;
+}
+.social-links i{
+    color: #fff;
+    font-weight: 200;
+    font-size: 23px;
+}
+
+.copyright{
+    color:#fff;
+    font-weight:500;
+    margin: 30px;
+}
+
+#social-link-heading{
+    font-weight: 600;
+    color: var(--primery-color);
+    font-size: 20px;
+    color: #fff;
+}
+/* ------------------------ Store Section ----------------------- */
 @media only screen and (orientation: portrait){
+    .store-title{
+        font-size: 50px;
+    }
     .nav{
         padding: 8%;
+    }
+    .noblur{
+        backdrop-filter: none;
+        background:#fff;
     }
     .nav i{
         display: block;
@@ -405,11 +580,8 @@ html , body{
         top: 110%;
         left:0;
         padding-left: 10%;
-        background-color: rgba(255,255,255,0.6);
-        border-radius: var(--border-radius);
-        box-shadow: var(--box-shadow);
-        backdrop-filter: blur(10px);
         width:100%;
+        background:#fff;
         display:none;
     } 
     .nav ul li{
@@ -417,9 +589,15 @@ html , body{
         margin: 20px 0;
         padding: 5px 0;
     }
+    .nav ul li .Store-button i{
+        display:inline;
+     }
     .nav .showmenu{
         display:block;
-
+        background-color: rgba(255,255,255,0.6);
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        backdrop-filter: blur(10px) saturate(80%) !important;
     }
     .main-header{
         background-position: center;
@@ -427,8 +605,7 @@ html , body{
 
     }
     .header .content{
-        width: 90%;
-        padding: 3rem 0;
+        width: 100vw;
     }
     .header .content h1{
         font-size: 30px;
@@ -447,7 +624,7 @@ html , body{
     .updates h4{
         font-size: 40px;
     }
-    .event-section-title h4{
+    .section-title h4{
         font-size: 40px;
     }
     .swiper .swiper-slide{
